@@ -78,6 +78,11 @@ namespace Npgsql.EntityFrameworkCore.PostgreSQL.Query.Expressions.Internal
             return new JsonTraversalExpression(Expression, newPath, ReturnsText, Type,TypeMapping);
         }
 
+        public JsonTraversalExpression WithReturnsText(bool returnsText)
+            => ReturnsText == returnsText
+                ? this :
+                new JsonTraversalExpression(Expression, Path, returnsText, Type, TypeMapping);
+
         /// <inheritdoc />
         public override bool Equals(object obj) => Equals(obj as JsonTraversalExpression);
 
