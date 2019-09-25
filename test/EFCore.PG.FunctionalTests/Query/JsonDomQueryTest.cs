@@ -540,7 +540,7 @@ WHERE (j.""CustomerElement""->'Statistics' ?& ARRAY['foo','Visits']::text[])");
                 static JsonDocument CreateCustomer2() => JsonDocument.Parse(@"
                 {
                     ""Name"": ""Moe"",
-                    ""Age"": 35,
+                    ""Age"": {""value"": 123},
                     ""IsVip"": true,
                     ""Statistics"":
                     {
